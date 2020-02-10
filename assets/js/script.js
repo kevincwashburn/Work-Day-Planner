@@ -1,20 +1,53 @@
 
-$(document).ready(function() {
-for(var i = 0; i < 18; i++) {
-    var populate= (localStorage.getItem("savedEntries") + i || "[]");
-    if(populate !== null) {
-    $(".description" + i).val(populate);
+
+
+// $(document).ready(function() {
+
+
+$(".btn-save").on("click", function(){
+    var newEntry = {
+        id: $(this.dataset.time),
+        text: $(this.dataset.time).val()
     };
-}
+    localStorage.setItem("savedEntries" + newEntry[0], (newEntry[1]));
+
+    for(var i = 0; i < 18; i++) {
+        var populate= (localStorage.getItem("savedEntries") + i || "[]");
+        if(populate) {
+        // $(".description" + i).val(populate);
+        
+        };
+    };
+
 });
 
-$(".btn-save").on("click", function () {
-    var hour = $(this).val();
-    var savedText = $(".description" + hour).val();
-    console.log(savedText);
-    console.log(hour);
-    localStorage.setItem("savedEntries" + hour, (savedText));
-});
+// $(".btn-save").on("click", function(){
+//     var hour = $(this.dataset.time);
+//     var savedText = $(this.dataset.time).val();
+//     localStorage.setItem("savedEntries" + hour, (savedText));
+
+//     console.log(hour);
+//     console.log(savedText);
+// });
+
+// });
+
+// $(".btn-save").on("click", function () {
+//     var newEntry = {
+//         id: $(this.dataset.time),
+//         text: $(this.dataset.time).val()
+// }
+//     var saveArray = JSON.parse(localStorage.getItem("savedEntries") || "[]");
+//     (setItem) (key, JSON.stringify(value))
+//     localStorage.setItem("savedEntries", JSON.stringify(saveArray));
+// });
+
+// $(".btn-save").on("click", function () {
+//     var hour = $(this).val();
+//     // console.log($(this.dataset.time).val())
+//     var savedText = $(".description" + hour).val();
+//     localStorage.setItem("savedEntries" + hour, (savedText));
+// });
 
 
 $(document).ready(function() {
