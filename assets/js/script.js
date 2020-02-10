@@ -5,16 +5,15 @@
 
 
 $(".btn-save").on("click", function(){
-    var newEntry = {
-        id: $(this.dataset.time),
-        text: $(this.dataset.time).val()
-    };
-    localStorage.setItem("savedEntries" + newEntry[0], (newEntry[1]));
+    var hour = $(this.dataset.time);
+    var savedText = $(this.dataset.time).val();
+
+    localStorage.setItem("savedEntries" + hour, (savedText));
 
     for(var i = 0; i < 18; i++) {
         var populate= (localStorage.getItem("savedEntries") + i || "[]");
         if(populate) {
-        // $(".description" + i).val(populate);
+        $(".description" + i).val(populate);
         
         };
     };
