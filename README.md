@@ -8,4 +8,4 @@ Link to Deployed Site:
 https://kevincwashburn.github.io/Work-Day-Planner/
 
 Screenshot:
-![alt-text](assets/images/deployed-planner-screenshot.png)
+![alt-text](assets/images/deployed-screenshot.jpg)
