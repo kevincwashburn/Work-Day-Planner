@@ -48,6 +48,10 @@ storedData.forEach(function(data) {
     // in the for loop: use the ID in the object to select the correct textarea. 
     $(data.id).val(data.text)
 })
+//for loop alternative:
+// for (var i = 0; i < storedData.length; i++) {
+//     $(storedData[i].id).val(storedData[i].text);
+// }
 
 
 // each time-block row will be color-coded based on the current time of day (past, present, future)
@@ -142,4 +146,4 @@ var day = new Date(); // day.getDay();
 var month = new Date(); //month.getMonth();
 var date = new Date(); // date.getDate();
 
-$("#currentDay").text(dayArray[day.getDay()] + ", " + monthArray[month.getMonth()] + " " + date.getDate() + "th");
+$("#currentDay").text(dayArray[day.getDay()] + ", " + monthArray[month.getMonth()] + " " + date.getDate());
