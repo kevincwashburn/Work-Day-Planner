@@ -52,8 +52,16 @@ $(document).ready(function() {
         row.append(hourCol);
 
         var customBorder = $("<div>").attr({
-            "class": "col-lg-6 customBorder"
-        })
+            "class": "col-lg-6 custom-border"
+        });
+        var textArea = $("<textarea>").attr({
+            "class": "description",
+            "id": "text"
+        });
+        customBorder.append(textArea);
+        row.append(customBorder);
+
+
         
     })
     

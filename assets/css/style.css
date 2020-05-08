@@ -28,7 +28,7 @@ textarea{
   white-space: pre-wrap;
 }
 
-.customBorder {
+.custom-border {
   border-left: 1px solid black;
   padding: 0px;
 }
