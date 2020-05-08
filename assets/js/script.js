@@ -15,20 +15,47 @@ storedData.forEach(function(data) {
 });
 
 $(document).ready(function() {
-    // var hours24 = new Date().getHours();
-    // console.log(hours24);
-
     var hours24 = new Date().getHours();
     if (hours24 > 12) {
         var hours12 = hours24 - 12;
     }
     console.log(hours12);
 
-    var timeBlocks = [9, 10, 11, 12, 1, 2, 3, 4, 5];
+    // var timeBlocks = [9, 10, 11, 12, 1, 2, 3, 4, 5];
+
+    var timeBlocks = [
+        {
+            hour: "9"
+        },
+        {
+            hour: "10"
+        },
+        {
+            hour: "11"
+        },
+        {
+            hour: "12"
+        },
+        {
+            hour: "1"
+        },
+        {
+            hour: "2"
+        },
+        {
+            hour: "3"
+        },
+        {
+            hour: "4"
+        },
+        {
+            hour: "5"
+        }
+    ];
 
     var timeStamp;
 
-    timeBlocks.forEach(function(createBlock) {
+    timeBlocks.forEach(function(hourBlock) {
         var row = $("<div>").attr({
             "class": "row"
         });
@@ -42,29 +69,44 @@ $(document).ready(function() {
         var hourCol = $("<div>").attr({
             "class": "col-lg-2 hour"
         });
-        if (createBlock >= 9 && createBlock <= 11) {
+        if (hourBlock.hour >= 9 && hourBlock.hour <= 11) {
             timeStamp = "AM"
-        } else if (createBlock >= 1 && createBlock <= 5 || createBlock === 12) {
+        } else if (hourBlock.hour >= 1 && hourBlock.hour <= 5 || hourBlock.hour == 12) {
             timeStamp = "PM"
         };
-        var hourText = $(`<p>${createBlock} ${timeStamp}</p>`);
+        var hourText = $(`<p>${hourBlock.hour} ${timeStamp}</p>`);
         hourCol.append(hourText);
         row.append(hourCol);
 
         var customBorder = $("<div>").attr({
             "class": "col-lg-6 custom-border"
         });
-        var textArea = $("<textarea>").attr({
-            "class": "description",
-            "id": "text"
-        });
+        // var textArea = $("<textarea>").attr({
+        //     "class": "description",
+        //     "id": hourBlock
+        // });
+        var textArea = $("<textarea>").attr("id", "9");
+        textArea.addClass("description");
         customBorder.append(textArea);
         row.append(customBorder);
 
         var colSave = $("<div>").attr({
-            "class": "col-lg-2 save-btn"
-        })
-        
+            "class": "col-lg-2 col-save"
+        });
+        // var saveBtn = $("<button>SAVE</button>").attr({
+        //     "class": "btn-save",
+        //     "data-time": #hourBlock
+        // });
+        var saveBtn = $("<button>SAVE</button>").attr("data-time", "#9")
+        saveBtn.addClass("btn-save");
+        colSave.append(saveBtn);
+        row.append(colSave);
+
+        // var centerCol2 = $("<div>").attr({
+        //     "class": "col-lg-1"
+        // });
+        // row.append(centerCol2);
+
     })
     
 
