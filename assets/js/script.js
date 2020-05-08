@@ -61,7 +61,9 @@ $(document).ready(function() {
         customBorder.append(textArea);
         row.append(customBorder);
 
-
+        var colSave = $("<div>").attr({
+            "class": "col-lg-2 save-btn"
+        })
         
     })
     
